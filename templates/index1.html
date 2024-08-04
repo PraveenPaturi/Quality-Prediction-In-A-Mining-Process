@@ -1,0 +1,75 @@
+<html>
+<head>
+  <title>ML API</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head> 
+<body>
+   <h1 align="center">
+				<font face="sans-serif"  size="9">
+				    QUALITY PREDICTION IN A MINING PROCESS
+				</font>
+			</h1>
+
+<div class="container text-center">
+  <h1 class="mt-5 text-white font-weight-light">Description:</h1>
+  <p class="lead text-white-50">To predict the silica(impurity) % in the ore concentrate in a less time we are building a predictive analytics system in that we are applying various machine learning algorithm.</p>
+   <div class="login">
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+        <fieldset>
+			<legend align=center><h2>Enter the mixture quantities</h2></legend>
+			<table cellpadding=5 align=center >
+        <tr>
+		   <td>Amina Flow</td>
+		   <td> : </td>
+    	   <td><input type="text" name="aminaflow" placeholder="" required="required" /><br></td>
+    	</tr>
+    	 <tr>
+		     <td>Flotation Column 01 </td>
+		     <td> : </td>
+		     <td><input type="text" name="flotation1" placeholder="" required="required" /><br></td>
+        </tr>
+        <tr>
+		     <td>Flotation Column 02 </td>
+		     <td> : </td>
+             <td><input type="text" name="flotation2" placeholder="" required="required" /><br></td>
+        </tr>
+        <tr>
+		    <td>Flotation Column 03</td>
+		    <td> : </td>
+            <td><input type="text" name="flotation3" placeholder="" required="required" /><br></td>
+        </tr>
+        <tr>
+		       <td>Flotation Column 04</td>
+		       <td> : </td>
+               <td><input type="text" name="flotation4" placeholder="" required="required" /><br></td>
+        </tr>
+        <tr>
+		     <td>Flotation Column 05</td>
+		     <td> : </td>
+             <td><input type="text" name="flotation5" placeholder="" required="required" /><br></td>
+        </tr>
+        <tr>
+		     <td>Flotation Column 07</td>
+		     <td> : </td>
+             <td><input type="text" name="flotation7" placeholder="" required="required" /><br></td>
+        </tr>
+        <tr>
+		     <td>% Iron Concentrate</td>
+		     <td> : </td>
+             <td><input type="text" name="%iron" placeholder="" required="required" /><br></td>
+        </tr>
+        <tr>
+    	      <td><button type="submit" class="btn btn-primary btn-block btn-large">Predict</button></td>
+    	</tr>
+    	</table>
+    </form>
+     <br>
+         <center> {{ prediction_text }} </center>
+	<br>
+
+ </div>
+
+</div>
+</body>
+</html>
